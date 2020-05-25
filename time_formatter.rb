@@ -34,4 +34,3 @@ class TimeFormatter
   end
 
 end
-
