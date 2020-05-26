@@ -26,11 +26,7 @@ class App
     
     if params['format'] && params['format'] != ''
       formatter.call
-      if formatter.valid?
-        response(200, formatter.time)
-      else
-        response(400, formatter.unknown_formats)
-      end
+      formatter.valid? ? response(200, formatter.time) : response(400, formatter.unknown_formats)
     else
       response(200, '')
     end
